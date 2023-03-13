@@ -1,28 +1,28 @@
-<div *ngIf="isAuth">
+<div *ngIf="isAuth" class=" px-2 bg-light sidebar ">
   <div class="logo-container">
-    <a> LOGO</a>
+    <a routerLink="" class="text-primary nav-link fw-bolder text-center fa-2x pb-5  ">  LOGO</a>
   </div>
   <div class="payment">
-    <h3>Paiment</h3>
+    <h5 class="text-muted mb-2 ">Paiment</h5>
     <div>
-      <ul *ngFor="let item of paymentItems">
-        <li>
-          <a [routerLink]="item.route">
-            <i [class]="item.icon"></i>
-            <span>{{ item.nom}}</span>
+      <ul *ngFor="let item of paymentItems" class="">
+        <li class=" nav-item sidebar-list">
+          <a class=" nav-link fw-bold list-link" [ngClass]="{'selected': item === selectedItem}"  [routerLink]="item.route" (click)="onClick(item)">
+            <i  [class]="item.icon"></i>
+            <span class=" px-3 sidebar-list-nom">{{ item.nom}}</span>
           </a>
         </li>
       </ul>
     </div>
   </div>
   <div class="gestion">
-    <h3>Gestion</h3>
+    <h5  class="text-muted mb-2 ">Gestion</h5>
     <div>
       <ul *ngFor="let item of gestionItems">
-        <li>
-          <a [routerLink]="item.route">
+        <li class=" nav-item sidebar-list">
+          <a class="nav-link fw-bold list-link" [ngClass]="{'selected': item === selectedItem}" [routerLink]="item.route" (click)="onClick(item)">
             <i [class]="item.icon"></i>
-            <span>{{ item.nom}}</span>
+            <span class=" px-3 sidebar-list-nom">{{ item.nom}}</span>
           </a>
         </li>
       </ul>

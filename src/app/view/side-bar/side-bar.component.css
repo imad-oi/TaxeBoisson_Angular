@@ -1,0 +1,28 @@
+.sidebar{
+  height: 100vh;
+}
+
+.selected {
+  background-color: blue;
+  color: white;
+}
+
+
+.sidebar-list{
+  list-style-type: none;
+}
+
+
+.sidebar-list-nom{
+  font-size: 20px;
+}
+.list-link{
+  transition: all 0.5s ease-out ;
+  border-radius: 2em;
+  padding: 0.5em;
+}
+
+.list-link:hover{
+  background-color: blue;
+  color: white ;
+}

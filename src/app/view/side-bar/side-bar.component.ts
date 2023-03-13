@@ -11,12 +11,12 @@ export class SideBarComponent implements  OnInit{
   paymentItems = [
     {
       nom : 'Taxe Trimestrielle' ,
-      icon  : 'fa fa-home' ,
+      icon  : 'fa fa-home fa-2x' ,
       route : '/taxesTrimestrielles'
     },
     {
       nom : 'Taxe Annuelle' ,
-      icon  : 'fa fa-user' ,
+      icon  : 'fa fa-user fa-2x' ,
       route : '/taxesAnnuelles'
     }
   ]
@@ -24,27 +24,28 @@ export class SideBarComponent implements  OnInit{
   gestionItems = [
     {
       nom : 'Redevables' ,
-      icon  : 'fa fa-home' ,
+      icon  : 'fa fa-home fa-2x' ,
       route : '/redevables'
     },
     {
       nom : 'Locaux' ,
-      icon  : 'fa fa-home' ,
+      icon  : 'fa fa-home fa-2x' ,
       route : '/local'
     },
     {
-      nom : 'tauxTrimestrielle' ,
-      icon  : 'fa fa-home' ,
+      nom : 'Taux Trimestrielle' ,
+      icon  : 'fa fa-home fa-2x' ,
       route : '/tauxTrimestrielle'
     },
     {
-      nom : 'tauxAnnuelles' ,
-      icon  : 'fa fa-home' ,
+      nom : 'Taux Annuelles' ,
+      icon  : 'fa fa-home fa-2x' ,
       route : '/tauxAnnuelles'
     }
   ]
 
   isAuth:Boolean = false ;
+  selectedItem: any ;
   constructor(private  authService : AuthService) {
   }
 
@@ -52,5 +53,9 @@ export class SideBarComponent implements  OnInit{
   ngOnInit(): void {
     this.isAuth = this.authService.isAuth ;
     }
+
+  onClick(item: any) {
+    this.selectedItem = item ;
+  }
 
 }
