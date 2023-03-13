@@ -1,1 +1,31 @@
-<p>side-bar works!</p>
+<div *ngIf="isAuth">
+  <div class="logo-container">
+    <a> LOGO</a>
+  </div>
+  <div class="payment">
+    <h3>Paiment</h3>
+    <div>
+      <ul *ngFor="let item of paymentItems">
+        <li>
+          <a [routerLink]="item.route">
+            <i [class]="item.icon"></i>
+            <span>{{ item.nom}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="gestion">
+    <h3>Gestion</h3>
+    <div>
+      <ul *ngFor="let item of gestionItems">
+        <li>
+          <a [routerLink]="item.route">
+            <i [class]="item.icon"></i>
+            <span>{{ item.nom}}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
