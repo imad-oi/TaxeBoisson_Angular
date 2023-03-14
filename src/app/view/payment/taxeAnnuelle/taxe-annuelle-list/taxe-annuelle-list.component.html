@@ -1,1 +1,31 @@
-<p>taxe-annuelle-list works!</p>
+<div class="container ">
+  <div class="row">
+    <div class="col-md-6"><h2>Paiment des Taxes Annuelles</h2></div>
+
+    <div class="col-auto d-flex flex-row align-items-center justify-content-end">
+      <form class="text-md-end" >
+        <input type="text" placeholder="Chercher" class="form-control"  #refInput="ngModel" name="reference" [(ngModel)]="reference" (change)="findByReference(reference)" >
+      </form>
+      <button class="btn btn-primary text-md-end" routerLink="/taxesAnnuelles/add"> <i class="fa fa-plus-circle"></i>  Ajouter Taxe</button>
+    </div>
+  </div>
+  <div class="row mt-5 px-2">
+    <table class="table-light table-bordered table-hover">
+      <tr>
+        <td>Ref</td>
+        <td>Ref.local</td>
+        <td>Redevable</td>
+        <td>Annee</td>
+        <td>Montant</td>
+      </tr>
+
+      <tr *ngFor="let taxe of taxesAnnuelles">
+        <td>{{taxe.ref}} </td>
+        <td>{{taxe.local}}</td>
+        <td>{{taxe.redevable}}</td>
+        <td>{{taxe.annee}}</td>
+        <td>{{taxe.total}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

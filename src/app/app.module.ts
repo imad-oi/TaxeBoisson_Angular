@@ -23,6 +23,10 @@ import { NotFoundComponent } from './view/not-found/not-found.component';
 import {HttpClientModule} from "@angular/common/http";
 import {SideBarComponent} from "./view/side-bar/side-bar.component";
 import {AuthGuardService} from "./controller/services/auth-guard.service";
+import {TaxeAnnuelleService} from "./controller/services/taxe-annuelle.service";
+import {TaxeTrimestrielleService} from "./controller/services/taxe-trimestrielle.service";
+import {TauxAnnuelleService} from "./controller/services/taux-annuelle.service";
+import {TauxTrimestrielle} from "./controller/models/taux-trimestrielle.model";
 
 
 const appRoutes: Routes =[
@@ -70,7 +74,8 @@ const appRoutes: Routes =[
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
