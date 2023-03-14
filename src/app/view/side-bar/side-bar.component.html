@@ -7,7 +7,7 @@
     <div>
       <ul *ngFor="let item of paymentItems" class="">
         <li class=" nav-item sidebar-list">
-          <a class=" nav-link fw-bold list-link" [ngClass]="{'selected': item === selectedItem}"  [routerLink]="item.route" (click)="onClick(item)">
+          <a class=" nav-link fw-bold list-link"  [ngClass]="{'selected': item === selectedItem }"  [routerLink]="item.route" (click)="onClick(item)">
             <i  [class]="item.icon"></i>
             <span class=" px-3 sidebar-list-nom">{{ item.nom}}</span>
           </a>

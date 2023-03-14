@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {TaxeAnnuelleService} from "../../../../controller/services/taxe-annuelle.service";
 import {TaxeAnnuelle} from "../../../../controller/models/taxe-annuelle.model";
+import { TaxeAnnuelleCreateComponent} from "../taxe-annuelle-create/taxe-annuelle-create.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-taxe-annuelle-list',
@@ -10,7 +12,9 @@ import {TaxeAnnuelle} from "../../../../controller/models/taxe-annuelle.model";
 export class TaxeAnnuelleListComponent implements OnInit {
 
   reference : string = '' ;
-  constructor(private  taxeAnnuelleService : TaxeAnnuelleService) {
+  constructor(private  taxeAnnuelleService : TaxeAnnuelleService,
+              private  dialog : MatDialog
+              ) {
   }
   ngOnInit(): void {
     this.findAll();
@@ -36,6 +40,20 @@ export class TaxeAnnuelleListComponent implements OnInit {
     this.reference = '' ;
   }
 
+
+
+  public ajouterTaxe(): void {
+     const dialogRef = this.dialog.open(TaxeAnnuelleCreateComponent, {
+      width: '600px', // Définissez la largeur du dialogue
+      disableClose: true // Empêchez l'utilisateur de fermer le dialogue en cliquant à l'extérieur
+    });
+
+    // Écoutez l'événement 'afterClosed' pour récupérer les données du formulaire
+    dialogRef.afterClosed().subscribe(result => {
+     console.log(result);
+    });
+  }
+
   set taxeAnnuelle(value: TaxeAnnuelle) {
     this.taxeAnnuelleService.taxeAnnuelle = value;
   }
@@ -49,3 +67,5 @@ export class TaxeAnnuelleListComponent implements OnInit {
   }
 
 }
+
+

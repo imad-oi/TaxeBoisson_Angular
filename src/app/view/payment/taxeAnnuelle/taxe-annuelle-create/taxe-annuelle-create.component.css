@@ -1,0 +1,10 @@
+/*.mat-dialog-container {
+  position: fixed;
+  box-shadow: navajowhite;
+  background-color: whitesmoke;
+  width: 600px;
+  height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}*/

@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {TaxeAnnuelleService} from "../../../../controller/services/taxe-annuelle.service";
 import {TaxeAnnuelle} from "../../../../controller/models/taxe-annuelle.model";
 
 @Component({
   selector: 'app-taxe-annuelle-create',
   templateUrl: './taxe-annuelle-create.component.html',
-  styleUrls: ['./taxe-annuelle-create.component.css']
+  styleUrls: ['./taxe-annuelle-create.component.css'],
 })
 export class TaxeAnnuelleCreateComponent  implements  OnInit{
   constructor(private taxeAnnuelleService:TaxeAnnuelleService) {

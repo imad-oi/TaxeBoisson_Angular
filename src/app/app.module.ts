@@ -27,6 +27,7 @@ import {TaxeAnnuelleService} from "./controller/services/taxe-annuelle.service";
 import {TaxeTrimestrielleService} from "./controller/services/taxe-trimestrielle.service";
 import {TauxAnnuelleService} from "./controller/services/taux-annuelle.service";
 import {TauxTrimestrielle} from "./controller/models/taux-trimestrielle.model";
+import {MatDialogModule} from "@angular/material/dialog";
 
 
 const appRoutes: Routes =[
@@ -73,6 +74,7 @@ const appRoutes: Routes =[
     FormsModule ,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    MatDialogModule
   ],
   providers: [
   ],

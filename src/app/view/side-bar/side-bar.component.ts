@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../controller/services/auth.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-side-bar',
@@ -46,12 +47,20 @@ export class SideBarComponent implements  OnInit{
 
   isAuth:Boolean = false ;
   selectedItem: any ;
-  constructor(private  authService : AuthService) {
+  constructor(private  authService : AuthService, private router : Router) {
   }
 
+  setSelectedItem() {
+    const currentUrl = this.router.url;
+    if (currentUrl === '/') {
+      this.selectedItem = this.paymentItems
+        .find(item => item.nom === 'Taxe Trimestrielle');
+    }
+  }
 
   ngOnInit(): void {
     this.isAuth = this.authService.isAuth ;
+    this.setSelectedItem();
     }
 
   onClick(item: any) {
